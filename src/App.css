@@ -1,0 +1,228 @@
+.App {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 36px;
+  gap: 24px;
+}
+
+.success-box {
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+  border-radius: 20px;
+  gap: 24px;
+  background-image: linear-gradient(to bottom right, #b0db7d 40%, #99dbb4 100%);
+  box-shadow: 1px 1px 3px rgba(255, 255, 255, 0.3);
+}
+.error-box {
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+  border-radius: 20px;
+  gap: 24px;
+  background-image: linear-gradient(to bottom left, #ef8d9c 40%, #ffc39e 100%);
+  box-shadow: 1px 1px 3px rgba(255, 255, 255, 0.3);
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: #fcfcfc;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+p {
+  font-size: 20px;
+  font-weight: 400;
+  color: #5e5e5e;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.wrapper {
+  position: relative;
+}
+
+.text-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+.face {
+  width: 100px;
+  height: 100px;
+  background: #fff;
+  border-radius: 50%;
+  border: 1px solid #777;
+  position: relative;
+}
+
+.happy {
+  animation: bounce 1s ease-in infinite;
+}
+.sad {
+  animation: bounce 4s ease-in-out infinite;
+  animation-direction: reverse;
+}
+
+.sad .eye {
+  animation: shake-eyes 4s ease-in-out infinite;
+}
+
+.eye {
+  width: 10px;
+  height: 10px;
+  background: #777;
+  border-radius: 50%;
+  position: absolute;
+  transform: translate(20px, 40px);
+}
+
+.right {
+  right: 40px;
+}
+
+.happy .mouth {
+  width: 10px;
+  height: 10px;
+  border-width: 3px;
+  border-style: solid;
+  border-color: transparent #777 #777 transparent;
+  border-radius: 50%;
+  position: absolute;
+  top: 45px;
+  left: 43px;
+  rotate: 45deg;
+}
+.sad .mouth {
+  width: 10px;
+  height: 10px;
+  border-width: 3px;
+  border-style: solid;
+  border-color: #777 transparent transparent #777;
+  border-radius: 50%;
+  position: absolute;
+  top: 45px;
+  left: 43px;
+  rotate: 45deg;
+  animation: shake-mouth 4s ease-in-out infinite;
+}
+
+.shadow {
+  width: 80px;
+  height: 10px;
+  background: #777;
+  border-radius: 50%;
+  position: absolute;
+  left: 10px;
+}
+
+.happy + .shadow {
+  animation: scale 1s ease-in infinite;
+}
+.sad + .shadow {
+  animation: scale 4s ease-in-out infinite;
+  animation-direction: reverse;
+}
+
+.action-button {
+    background: #FCFCFC;
+    padding: 18px 36px;
+    border-radius: 30px;
+    outline: 0;
+    border: none;
+    box-shadow: 2px 2px 10px rgba(119, 119, 119, 0.5);
+    transition: all 0.5s ease-in-out;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+  .action-button:hover {
+    background: #efefef;
+    transform: scale(1.05);
+    transition: all 0.3s ease-in-out;
+  }
+
+  .success {
+    color: #4ec07d;
+  }
+
+  .error {
+    color: #e96075;
+  }
+
+/* Animations */
+@keyframes bounce {
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes scale {
+  50% {
+    transform: scale(0.9);
+  }
+}
+
+@keyframes shake-eyes {
+  50% {
+    transform: translate(20px, 60px);
+  }
+
+  60% {
+    transform: translate(10px, 60px);
+  }
+  70% {
+    transform: translate(30px, 60px);
+  }
+  80% {
+    transform: translate(10px, 60px);
+  }
+  90% {
+    transform: translate(30px, 60px);
+  }
+  100% {
+    transform: translate(20px, 40px);
+  }
+}
+@keyframes shake-mouth {
+  50% {
+    top: 65px;
+    left: 43px;
+  }
+
+  60% {
+    top: 65px;
+    left: 35px;
+  }
+  70% {
+    top: 65px;
+    left: 55px;
+  }
+  80% {
+    top: 65px;
+    left: 35px;
+  }
+  90% {
+    top: 65px;
+    left: 55px;
+  }
+  100% {
+    top: 45px;
+    left: 43px;
+  }
+}
